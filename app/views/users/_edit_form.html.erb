@@ -32,8 +32,9 @@
       <td><%= form.file_field :image, class: "form-control" %></td>
     </tr>
     <tr>
-      <th>アップされた画像</th>
+      <th>現在の<br>プロフィール写真</th>
       <td>
+        <%= form.hidden_field :image_cache %>
         <% if user.image && user.image.url %>
           <%= image_tag(user.image.url, class: "form-user-image") %>
         <% else %>

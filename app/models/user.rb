@@ -6,6 +6,6 @@ class User < ApplicationRecord
     uniqueness: true
   before_validation {email.downcase!}
   has_secure_password
-  validates :password, length: {minimum: 6}
+  validates :password, length: {minimum: 6}, allow_nil: true
   mount_uploader :image, ImageUploader
 end

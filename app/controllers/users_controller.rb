@@ -35,7 +35,6 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to @user, notice: "ユーザー情報を編集しました!"
     else
-      binding.pry
       render :edit
     end
   end

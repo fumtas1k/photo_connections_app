@@ -10,7 +10,7 @@ module PhotoConnectionsApp
     config.time_zone = "Tokyo"
     config.active_record.default_timezone = :local
 
-    donfig.generators do |g|
+    config.generators do |g|
       g.assets false
       g.test_framework false
       g.skip_routes true

@@ -1,0 +1,34 @@
+<% provide(:title, "#{@user.full_name}(@#{@user.name})・photo_conections") %>
+<div class="user-show-header">
+  <div class="user-show-image">
+    <% if @user.image && @user.image.url %>
+      <%= image_tag @user.image.url %>
+    <% else %>
+      <%= image_tag "dummy_user.jpg" %>
+    <% end %>
+  </div>
+  <div class="user-show-profile">
+    <div class="user-show-name">
+      <h1><%= @user.name %></h1>
+      <div class="user-show-edit">
+        <a href="#">プロフィールを編集</a>
+      </div>
+    </div>
+    <div class="user-show-counts">
+      <ul>
+        <li>投稿<span></span>件</li>
+        <li>フォロワー<span></span>人</li>
+        <li>フォロー中<span></span>人</li>
+      </ul>
+    </div>
+    <div class="user-show-full_name">
+      <h2><%= @user.full_name %></h2>
+    </div>
+  </div>
+</div>
+<div class="show-nav">
+  <ul>
+    <li  class="show-nav-list border-top"><a href="#"><i class="fas fa-th"></i> 投稿</a></li>
+    <li class=show-nav-list><a href="#"><i class="far fa-bookmark"></i> 保存済み</a></li>
+  </ul>
+</div>

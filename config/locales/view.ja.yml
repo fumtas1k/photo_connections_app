@@ -1,0 +1,9 @@
+ja:
+  views:
+    users:
+      email: メールアドレス
+      full_name: フルネーム
+      name: ユーザーネーム
+      email: メールアドレス
+      password: パスワード
+      password_confirmation: 確認用パスワード

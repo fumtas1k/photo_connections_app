@@ -1,0 +1,34 @@
+<div class="login-form-wrapper">
+  <div class="login-form-header">
+    <h1 class="login-form-title">photo_conections</h1>
+  </div>
+  <%= form_with(model: user, local: true, class: "login-form") do |form| %>
+    <% if user.errors.any? %>
+      <div class="alert alert-danger alert-login">
+        <h2><%= pluralize(user.errors.count, "error", locale: :en)  %> prohibited this <%= user.name %> from being saved:</h2>
+        <ul>
+          <% user.errors.full_messages.each do |msg| %>
+            <li><%= msg%></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <h2 class="login-form-subtitle">登録して友達の写真や動画をチェックしよう</h2>
+    <%= image_tag(user.image.url, class: "form-user-image") if user.image && user.image.url %>
+    <%= form.label :email, class: "sr-only" %>
+    <%= form.email_field :email, class: "form-control", placeholder: t("views.users.email"), required: true, autofocus: true %>
+    <%= form.label :full_name, class: "sr-only" %>
+    <%= form.text_field :full_name, class: "form-control", placeholder: t("views.users.full_name"), required: true %>
+    <%= form.label :name, class: "sr-only" %>
+    <%= form.text_field :name, class: "form-control", placeholder: t("views.users.name"), required: true %>
+    <%= form.label :image, class: "sr-only" %>
+    <%= form.file_field :image, class: "form-control" %>
+    <%= form.hidden_field :image_cache %>
+    <%= form.label :password, class: "sr-only" %>
+    <%= form.password_field :password, class: "form-control", placeholder: t("views.users.password"), required: true %>
+    <%= form.label :password, class: "sr-only" %>
+    <%= form.password_field :password_confirmation, class: "form-control", placeholder: t("views.users.password_confirmation"), required: true %>
+    <%= form.submit "登録する", class: "btn btn-primary" %>
+    <p class="explanation-rule">登録することで、本規約、データに関するポリシー、Cookieポリシーに同意するものとします。</p>
+  <% end %>
+</div>

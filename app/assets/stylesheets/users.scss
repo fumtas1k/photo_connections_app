@@ -1,0 +1,182 @@
+// form.html用
+.login-form-wrapper {
+  width: 350px;
+  margin: 10px auto;
+  padding-bottom: 20px;
+  background-color: rgb(255,255,255);
+  border: 1px solid rgb(219,219,219);
+  text-align: center;
+}
+.login-form-header {
+  width: 100%;
+  height: 51px;
+  margin: 22px auto 12px;
+}
+.login-form-title {
+  font-size: 24px;
+  font-family: "Comic Sans MS";
+  line-height: 51px;
+}
+.login-form-subtitle {
+  color: rgb(142, 142, 142);
+  font-size: 17px;
+  font-weight: 400;
+  width: 268px;
+  margin: 0 auto 10px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-form input {
+  width: 268px;
+  margin: 1px;
+}
+.login-form input[type="file"] {
+  width: 268px;
+  margin: 1px;
+  font-size: 12px;
+}
+.login-form input[type="submit"] {
+  height: 30px;
+  margin: 8px auto;
+  padding: 0;
+  line-height: 30px;
+}
+.explanation-rule {
+  color: rgb(142, 142, 142);
+  font-size: 12px;
+  width: 268px;
+  margin: 0 auto 10px;
+}
+.alert-login {
+  text-align: left;
+  margin: 10px auto;
+}
+.form-user-image {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+//new.html用
+.enter-login-wrapper {
+  width: 350px;
+  height: 70px;
+  margin: 10px auto;
+  background-color: rgb(255,255,255);
+  border: 1px solid rgb(219,219,219);
+  text-align: center;
+}
+.enter-login-wrapper p {
+  font-size: 14px;
+  line-height: 70px;
+}
+.enter-login-wrapper a:hover {
+  text-decoration: none;
+}
+
+//show.html用
+.user-show-header {
+  height: 150px;
+  margin-bottom: 44px;
+  display: flex;
+  justify-content: start;
+}
+.user-show-image {
+  width: calc(100% / 3);
+  margin-right: 30px;
+  text-align: center;
+}
+.user-show-image img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.user-show-profile {
+  width: calc(100% / 3 * 2);
+  height: 100%;
+}
+.user-show-name {
+  height: 40px;
+  margin-bottom: 20px;
+  display: flex;
+}
+.user-show-name h1 {
+  font-size: 28px;
+  font-weight: normal;
+  margin: -5px 0 -6px;
+}
+.user-show-edit {
+  margin-left: 20px;
+}
+.user-show-edit a{
+  display: inline-block;
+  height: 30px;
+  padding: 5px 9px;
+  border: 1px solid rgb(219,219,219);
+  border-radius: 8px;
+  line-height: 18px;
+  vertical-align: baseline;
+}
+.user-show-counts {
+  height: 18px;
+  margin-bottom: 20px;
+}
+.user-show-full_name {
+  height: 24px;
+}
+.user-show-full_name h2 {
+  font-size: 18px;
+  padding: 0;
+}
+.user-show-counts {
+  width: 100%;
+  height: 18px;
+  margin-bottom: 20px;
+}
+.user-show-counts ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: start;
+}
+.user-show-counts li {
+  margin-right: 40px;
+  list-style: none;
+}
+.show-nav {
+  width: 100%;
+  height: 53px;
+  border-top: 1px solid rgb(219,219,219);
+}
+.show-nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.show-nav-list {
+  margin:0 30px;
+  list-style: none;
+  color: rgb(142,142,142);
+}
+.show-nav-list a {
+  display: block;
+  height: 52px;
+  line-height: 52px;
+  color: inherit;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.border-top {
+  margin-top: -1px;
+  border-top: 1px solid rgb(38,38,38);
+  color: rgb(38,38,38);
+}

@@ -3,8 +3,9 @@ ja:
     models:
       user: ユーザー
     attributes:
-      full_name: フルネーム
-      name: ユーザーネーム
-      email: メールアドレス
-      password: パスワード
-      password_confirmation: 確認用パスワード
+      user:
+        full_name: フルネーム
+        name: ユーザーネーム
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード

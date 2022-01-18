@@ -3,16 +3,7 @@
     <h1 class="login-form-title">photo_conections</h1>
   </div>
   <%= form_with(model: user, local: true, class: "login-form") do |form| %>
-    <% if user.errors.any? %>
-      <div class="alert alert-danger alert-login">
-        <h2><%= pluralize(user.errors.count, "error", locale: :en)  %> prohibited this <%= user.name %> from being saved:</h2>
-        <ul>
-          <% user.errors.full_messages.each do |msg| %>
-            <li><%= msg%></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <%= render partial: "error_messages", locals: {user: user} %>
     <h2 class="login-form-subtitle">登録して友達の写真や動画をチェックしよう</h2>
     <%= image_tag(user.image.url, class: "form-user-image") if user.image && user.image.url %>
     <%= form.label :email, class: "sr-only" %>

@@ -1,0 +1,9 @@
+<div class="user-edit-container">
+  <ul class="user-edit-list">
+    <li><span class="user-edit-block user-edit-active">プロフィールを編集</span></li>
+    <li><a href="#" class="user-edit-block">ログアウト</a></li>
+  </ul>
+  <article class="user-edit-wrapper">
+    <%= render partial: "edit_form", locals: {user: @user} %>
+  </article>
+</div>

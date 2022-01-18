@@ -1,0 +1,49 @@
+
+<%= form_with(model: user, local: true, class: "edit_form") do |form| %>
+  <%= render partial: "error_messages", locals: {user: user} %>
+  <table class="edit-user-table">
+    <tr>
+      <th>
+        <%= image_tag(get_user_image_url(user), class: "edit-user-image-thumb") %></th>
+      <td><%= user.name %></td>
+    </tr>
+    <tr>
+      <th><%=form.label :full_name %></th>
+      <td><%= form.text_field :full_name, class: "form-control", placeholder: t("views.users.full_name"), required: true %></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><small>周りから知られている名前(氏名、ニックネーム、ビジネス名)を使用すると、他の人があなたのアカウントを見つけやすくなります。</small></td>
+    </tr>
+    <tr>
+      <th><%= form.label :name %></th>
+      <td><%= form.text_field :name, class: "form-control", placeholder: t("views.users.name"), required: true %></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><small>ほとんどの場合、14日間はユーザー名をno_hawkに戻すことができます。</small></td>
+    </tr>
+    <tr>
+      <th><%= form.label :email %></th>
+      <td><%= form.email_field :email, class: "form-control", placeholder: t("views.users.email"), required: true %></td>
+    </tr>
+    <tr>
+      <th><%= form.label :image %></th>
+      <td><%= form.file_field :image, class: "form-control" %></td>
+    </tr>
+    <tr>
+      <th>アップされた画像</th>
+      <td>
+        <% if user.image && user.image.url %>
+          <%= image_tag(user.image.url, class: "form-user-image") %>
+        <% else %>
+          <span>なし</span>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><%= form.submit "変更", class: "btn btn-primary" %></td>
+    </tr>
+  </table>
+<% end %>

@@ -18,14 +18,24 @@
           <div class="header-logo">
             <a href="#">photo_conections</a>
           </div>
-          <ul class="header-list">
-            <li class="header-item"><a href="#"><i class="fas fa-home"></i></a></li>
+          <ul class="header-list mini-relative-position">
+            <li class="header-item"><a href="#"><i class="fas fa-home"></i></a>
+            </li>
             <li class="header-item"><a href="#"><i class="far fa-plus-square"></i></a></li>
             <li class="header-item"><a href="#"><i class="far fa-compass"></i></a></li>
             <li class="header-item"><a href="#"><i class="far fa-heart"></i></li></a>
-            <li class="header-item"><a href="#"><img src="#"></a></li>
+            <li class="header-item"><img src="#" id="mini-menu-btn"></li>
+            <div id="mini-menu-wrapper">
+              <ul class="mini-menu-list">
+                <li><a href="#"><i class="far fa-user-circle"></i><span>プロフィール</span></a></li>
+                <li><a href="#"><i class="far fa-user-circle"></i> <span>保存済み</span></a></li>
+                <hr class="mini-horizon">
+                <li><a href="#"><span>ログアウト</span></a></li>
+              </ul>
+            </div>
           </ul>
         </nav>
+
       </header>
       <div class="main-container">
         <% flash.each do |key, value| %>

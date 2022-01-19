@@ -5,6 +5,9 @@
     <li>
       <%= link_to "ログアウト", session_path(current_user.id), class: "user-edit-block", method: :delete %>
     </li>
+    <li>
+      <%= link_to "退会", user_path(current_user.id), class: "user-edit-block", method: :delete, data: {confirm: "退会すると投稿及びアカウントが削除され復元できません。\n本当に退会しますか?"} %>
+    </li>
   </ul>
   <article class="user-edit-wrapper">
     <%= render partial: "edit_form", locals: {user: @user} %>

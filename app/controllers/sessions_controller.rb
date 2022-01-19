@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to user, notice: "ログインしました!"
     else
+      flash[:danger] = "メールアドレス、パスワードのどちらかあるいは両方が間違っています。御確認ください。"
       render :new
     end
   end

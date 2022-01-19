@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
+  skip_before_action :login_required, only: %i[new create]
+  before_action :set_user, only: %i[show edit update destroy]
+  before_action :ensure_user, only: %i[edit update destroy]
+
   def new
     @user = User.new
-  end
-
-  def confirm
-    @user = User.new(user_params)
-    render :new if @user.invalid?
   end
 
   def create
@@ -27,7 +26,6 @@ class UsersController < ApplicationController
 
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
@@ -43,6 +41,14 @@ class UsersController < ApplicationController
   end
   private
   def user_params
-    params.require(:user).permit(:full_name, :name, :email, :password, :password_confirmation, :image, :image_cache)
+    params.require(:user).permit(:full_name, :name, :email,
+      :password, :password_confirmation, :image, :image_cache)
+  end
+  def set_user
+    @user = User.find(params[:id])
+  end
+  def ensure_user
+    flash[:danger] = "編集権限がありません!"
+    redirect_back(fallback_location: @user) if @user.id != current_user.id
   end
 end

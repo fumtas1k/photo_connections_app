@@ -1,0 +1,23 @@
+<% provide(:title, "ログイン・photo_conections") %>
+<div class="login-all-container">
+  <div class="login-image-wrapper">
+    <%= image_tag "inc.gif" %>
+  </div>
+  <div class="login-container">
+    <div class="login-form-wrapper">
+      <div class="login-form-header">
+        <h1 class="login-form-title">photo_conections</h1>
+      </div>
+      <%= form_with(scope: :session, url: sessions_path, local: true, class: "login-form") do |form| %>
+        <%= form.label :email, class: "sr-only" %>
+        <%= form.email_field :email, class: "form-control", placeholder: t("views.users.email"), required: true, autofocus: true %>
+        <%= form.label :password, class: "sr-only" %>
+        <%= form.password_field :password, class: "form-control", placeholder: t("views.users.password"), required: true %>
+        <%= form.submit "ログイン", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <div class="enter-login-wrapper">
+      <p>アカウントをお持ちでないすか？ <%= link_to "登録する", new_user_path %></p>
+    </div>
+  </div>
+</div>

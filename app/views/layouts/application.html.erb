@@ -25,10 +25,16 @@
               <li class="header-item"><a href="#"><i class="far fa-plus-square"></i></a></li>
               <li class="header-item"><a href="#"><i class="far fa-compass"></i></a></li>
               <li class="header-item"><a href="#"><i class="far fa-heart"></i></li></a>
-              <li class="header-item"><img src="#" id="mini-menu-btn"></li>
+              <li class="header-item">
+                <%= image_tag(get_user_image_url(current_user), id:"mini-menu-btn") %>
+              </li>
               <div id="mini-menu-wrapper">
                 <ul class="mini-menu-list">
-                  <li><a href="#"><i class="far fa-user-circle"></i><span>プロフィール</span></a></li>
+                  <li><%= link_to(
+                    content_tag(:i,"", class: "far fa-user-circle") +
+                    content_tag(:span, "プロフィール"),
+                    user_path(current_user.id)) %>
+                  </li>
                   <li><a href="#"><i class="far fa-user-circle"></i> <span>保存済み</span></a></li>
                   <hr class="mini-horizon">
                   <li><%=link_to content_tag(:span, "ログアウト"),session_path(current_user.id), method: :delete %></li>

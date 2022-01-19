@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to @user, notice: "アカウント作成しました!"
     else
       render :new
@@ -21,7 +22,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
 
@@ -29,7 +29,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to @user, notice: "ユーザー情報を編集しました!"
     else
@@ -48,7 +47,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   def ensure_user
-    flash[:danger] = "編集権限がありません!"
-    redirect_back(fallback_location: @user) if @user.id != current_user.id
+    if @user.id != current_user.id
+      flash[:danger] = "編集権限がありません!"
+      redirect_back(fallback_location: @user)
+    end
   end
 end

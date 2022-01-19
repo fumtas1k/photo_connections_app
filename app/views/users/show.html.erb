@@ -6,9 +6,11 @@
   <div class="user-show-profile">
     <div class="user-show-name">
       <h1><%= @user.name %></h1>
-      <div class="user-show-edit">
-        <%= link_to "プロフィールを編集",edit_user_path %>
-      </div>
+      <% if @user.id == current_user.id %>
+        <div class="user-show-edit">
+          <%= link_to "プロフィールを編集",edit_user_path %>
+        </div>
+      <% end %>
     </div>
     <div class="user-show-counts">
       <ul>

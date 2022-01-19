@@ -17,13 +17,17 @@
         <header>
           <nav class="header-nav">
             <div class="header-logo">
-              <a href="#">photo_connections</a>
+              <%= link_to "photo_connections", pictures_path %>
             </div>
             <ul class="header-list mini-relative-position">
               <li class="header-item"><a href="#"><i class="fas fa-home"></i></a>
               </li>
-              <li class="header-item"><a href="#"><i class="far fa-plus-square"></i></a></li>
-              <li class="header-item"><a href="#"><i class="far fa-compass"></i></a></li>
+              <li class="header-item">
+                <%= link_to(content_tag(:i, "", class: "far fa-plus-square"), new_picture_path) %>
+              </li>
+              <li class="header-item">
+                <%= link_to(content_tag(:i, "", class: "far fa-compass"), pictures_path) %>
+              </li>
               <li class="header-item"><a href="#"><i class="far fa-heart"></i></li></a>
               <li class="header-item">
                 <%= image_tag(get_user_image_url(current_user), id:"mini-menu-btn") %>

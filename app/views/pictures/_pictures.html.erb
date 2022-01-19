@@ -1,0 +1,11 @@
+<div class="pictures-wrapper">
+  <ul class="picture-list">
+    <% pictures.each do |picture| %>
+        <li class="picture-list-item">
+          <a href=<%= picture_path(picture.id)%>>
+            <%= image_tag(picture.image.url) if picture.image && picture.image.url %>
+          </a>
+        </li>
+    <% end %>
+  </ul>
+</div>

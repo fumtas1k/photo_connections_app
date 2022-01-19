@@ -1,0 +1,30 @@
+<div class="picture-form-wrapper">
+  <%= form_with(model: picture, url: choose_new_or_edit, local: true) do |form| %>
+    <% if picture.errors.any? %>
+      <div class="alert alert-danger alert-login">
+        <h2><%= pluralize(picture.errors.count, "error", locale: :en)  %>  from being saved:</h2>
+        <ul>
+          <% picture.errors.full_messages.each do |msg| %>
+            <li><%= msg%></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="picture-form-header">
+      <ul>
+        <li></li>
+        <li><span class="form-title">新規投稿を作成</span></li>
+        <li><%= form.submit "投稿", class: "btn btn-primary" %></li>
+      </ul>
+    </div>
+    <%= form.label :content, class: "sr-only" %>
+    <%= form.text_area :content, class: "form-control", placeholder: "キャプションを入力..." %>
+    <%= form.label :image, class: "sr-only" %>
+    <%= form.file_field :image, class: "form-control" %>
+    <%= form.hidden_field :image_cache %>
+    <div class="picture-image-box">
+      <div class="inner"></div>
+      <%= image_tag(picture.image.url, class: "form-picture-image") if picture.image && picture.image.url %>
+    </div>
+  <% end %>
+</div>

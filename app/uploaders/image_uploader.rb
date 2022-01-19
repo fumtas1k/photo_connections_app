@@ -4,9 +4,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   storage :file
 
   process resize_to_limit: [600, 750]
-  version :user_img do
-    process resize_to_fit: [150, 150]
-  end
 
   def extension_white_list
     %w[jpg jpeg gif png]

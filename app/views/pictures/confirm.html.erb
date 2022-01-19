@@ -1,0 +1,20 @@
+<% provide(:title, "新規投稿・photo connections") %>
+<div class="picture-form-wrapper">
+  <%= form_with(model: @picture, local: true) do |form| %>
+    <div class="picture-form-header">
+      <ul>
+        <li><%= form.submit "戻る", class: "btn btn-info", name: "back" %></li>
+        <li><span class="form-title">新規投稿を確認</span></li>
+        <li><%= form.submit "投稿", class: "btn btn-primary" %></li>
+      </ul>
+    </div>
+    <%= form.label :content, class: "sr-only" %>
+    <%= form.text_area :content, class: "form-control", placeholder: "キャプションを入力...", readonly: true %>
+    <%= form.label :image, class: "sr-only" %>
+    <%= form.hidden_field :image, class: "form-control" %>
+    <%= form.hidden_field :image_cache %>
+    <div class="picture-image-box">
+      <%= image_tag(@picture.image.url, class: "form-picture-image") if @picture.image && @picture.image.url %>
+    </div>
+  <% end %>
+</div>

@@ -23,6 +23,7 @@ class PicturesController < ApplicationController
       render :new
     else
       if @picture.save
+        ContactMailer.notify_posting(@picture.user).deliver
         redirect_to @picture, notice: "写真を投稿しました!"
       else
         render :new

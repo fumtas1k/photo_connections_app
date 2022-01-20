@@ -19,6 +19,9 @@
             <div class="header-logo">
               <%= link_to "photo_connections", pictures_path %>
             </div>
+            <div class="header-center">
+              <%= current_user.name %>
+            </div>
             <ul class="header-list mini-relative-position">
               <li class="header-item">
                 <%= link_to(content_tag(:i, "", class:"fas fa-home"), user_path(current_user.id)) %>

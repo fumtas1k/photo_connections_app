@@ -44,6 +44,13 @@ header a {
   font-size: 24px;
   font-family: "Comic Sans MS";
 }
+.header-center {
+  line-height: 59px;
+  font-size: 20px;
+  font-weight: bold;
+  color:rgb(24, 32, 80);
+}
+
 .header-list {
   min-width: 278px;
   margin: 0;
@@ -53,7 +60,7 @@ header a {
 }
 .header-item {
   list-style: none;
-  padding-left: 24px;
+  padding: 18px 0 18px 24px;
 }
 .header-item i {
   font-size: 24px;
@@ -66,6 +73,19 @@ header a {
   border-radius: 50%;
   &:hover {
     cursor: pointer;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header-logo {
+    display: none;
+  }
+}
+@media screen and (max-width: 575px) {
+  .header-center {
+    display: none;
+  }
+  .header-nav {
+    justify-content: end;
   }
 }
 

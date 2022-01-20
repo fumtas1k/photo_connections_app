@@ -1,2 +1,2 @@
-<h1>Pictures#edit</h1>
-<p>Find me in app/views/pictures/edit.html.erb</p>
+<% provide(:title, "投稿編集・photo connections") %>
+<%= render partial: "form", locals: {picture: @picture, form_title: "投稿を編集"} %>

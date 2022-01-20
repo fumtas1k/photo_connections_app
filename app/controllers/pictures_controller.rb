@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: %i[show update destroy]
+  before_action :set_picture, only: %i[show edit update destroy]
   def show
   end
 
@@ -33,6 +33,11 @@ class PicturesController < ApplicationController
   end
 
   def update
+    if @picture.update(picture_params)
+      redirect_to @picture, notice: "投稿を編集しました!"
+    else
+      render :edit
+    end
   end
 
   def destroy

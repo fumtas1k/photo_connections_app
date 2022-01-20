@@ -13,7 +13,7 @@
     <div class="picture-form-header">
       <ul>
         <li></li>
-        <li><span class="form-title">新規投稿を作成</span></li>
+        <li><span class="form-title"><%= form_title %></span></li>
         <li><%= form.submit "投稿", class: "btn btn-primary" %></li>
       </ul>
     </div>
@@ -23,7 +23,6 @@
     <%= form.file_field :image, class: "form-control" %>
     <%= form.hidden_field :image_cache %>
     <div class="picture-image-box">
-      <div class="inner"></div>
       <%= image_tag(picture.image.url, class: "form-picture-image") if picture.image && picture.image.url %>
     </div>
   <% end %>

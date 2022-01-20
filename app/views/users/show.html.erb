@@ -30,3 +30,6 @@
     <li class=show-nav-list><a href="#"><i class="far fa-bookmark"></i> 保存済み</a></li>
   </ul>
 </div>
+<article class="show-pictures">
+  <%= render partial: "pictures/pictures", locals: {pictures: @user.pictures} %>
+</article>

@@ -27,22 +27,12 @@
 }
 .picture-image-box {
   width: 100%;
-  height: auto;
   background-color: #fff;
-  position: relative;
-}
-.picture-image-box:before {
-  display: block;
-  content: "";
-  padding-top: 100%;
 }
 .picture-image-box img{
-  position: absolute;
-  top: 0;
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
 
 //index用
@@ -86,5 +76,113 @@
 @media screen and (max-width: 575px) {
   .picture-list {
     gap: 5px;
+  }
+}
+
+//show用
+.show-picture-wrapper {
+  width: 100%;
+  max-height: 598px;
+  display: flex;
+  margin: 0 auto 16px;
+  background-color: rgb(255,255,255);
+  border: 1px solid rgb(219,219,219);
+  font-size: 14px;
+}
+.show-picture-image-wrapper {
+  position: relative;
+  width: calc(100% - 334px);
+  max-width: 598px;
+}
+.show-picture-image-wrapper:before {
+  display: block;
+  content: "";
+  padding-top: 100%;
+}
+.show-picture-image {
+  position: absolute;
+  display: block;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+.show-picture-item {
+  width: 334px;
+  border-left: 1px solid rgb(239,239,239);
+}
+.show-picture-header,.show-picture-footer {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(239,239,239);
+}
+.show-picture-contributer a{
+  width: 60px;
+  padding: 0 12px 0 16px;
+  color: inherit;
+  font-weight: 400;
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+.show-picture-contributer img{
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+button#show-menu-btn {
+  width: 40px;
+  padding: 0 8px;
+  border: none;
+  background-color: inherit;
+  outline: none;
+}
+.show-picture-content-wrapper {
+  width: 100%;
+  height: 313px;
+  padding: 16px;
+  overflow-y: scroll;
+}
+.show-picture-content {
+  overflow-wrap: break-word;
+}
+.show-pictures {
+  width: 100%;
+  border-top: 1px solid rgb(239,239,239);
+  padding-top: 45px;
+}
+.show-pictures-contributer {
+  display: inline-block;
+  width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+  .show-picture-wrapper {
+    width: 100%;
+    max-height: 598px;
+    display: block;
+  }
+  .show-picture-image-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  .show-picture-image-wrapper:before {
+    display: none;
+    content: "";
+    padding-top: 100%;
+  }
+  .show-picture-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .show-picture-item {
+    width: 100%;
   }
 }

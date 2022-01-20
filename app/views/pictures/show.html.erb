@@ -1,2 +1,31 @@
-<h1>Pictures#show</h1>
-<p>Find me in app/views/pictures/show.html.erb</p>
+<% provide(:title, "#{@picture.user.name}の写真#{@picture.created_at.year}年") %>
+<article class="show-picture-wrapper">
+  <div class="show-picture-image-wrapper">
+    <%= image_tag(@picture.image.url, class: "show-picture-image") if @picture.image &&@picture.image.url %>
+  </div>
+  <div class="show-picture-item">
+    <div class="show-picture-header">
+      <div class="show-picture-contributer">
+        <a href=<%= user_path(@picture.user.id) %>>
+          <%= image_tag(@picture.user.image.url) if @picture.user.image && @picture.user.image.url %>
+        </a>
+        <%= link_to @picture.user.name, user_path(@picture.user.id) %>
+        <%= time_ago_in_words(@picture.created_at) %>
+      </div>
+      <button type="button" id="show-menu-btn">
+        <i class="fas fa-ellipsis-h"></i>
+      </button>
+    </div>
+    <div class="show-picture-content-wrapper">
+      <span class="show-picture-content">
+        <%= @picture.content %>
+      </span>
+    </div>
+    <div class="show-picture-footer">
+    </div>
+  </div>
+</article>
+<article class="show-pictures">
+  <span class="show-pictures-contributer"><strong><%= @picture.user.name %></strong>の他の投稿</span>
+  <%= render partial: "pictures", locals: {pictures: @pictures} %>
+</article>

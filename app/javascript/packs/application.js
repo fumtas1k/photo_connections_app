@@ -9,15 +9,13 @@ $(document).on('turbolinks:load', function() {
   $("#mini-menu-wrapper").hide();
   $(document).on("click",function(){
     $("#mini-menu-wrapper").slideUp(100);
+    $("#show-mini-menu-wrapper").slideUp(100);
   });
   $("#mini-menu-btn").on("click",function(e){
     $("#mini-menu-wrapper").slideToggle(100);
     e.stopPropagation();
   });
   $("#show-mini-menu-wrapper").hide();
-  $(document).on("click",function(){
-    $("#show-mini-menu-wrapper").slideUp(100);
-  });
   $("#show-menu-btn").on("click",function(e){
     $("#show-mini-menu-wrapper").slideToggle(100);
     e.stopPropagation();

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :login_required, only: %i[new create]
-  before_action :set_user, only: %i[show edit update destroy]
+  before_action :set_user, only: %i[show favorites edit update destroy]
   before_action :ensure_user, only: %i[edit update destroy]
 
   def new
@@ -25,6 +25,8 @@ class UsersController < ApplicationController
   def show
   end
 
+  def favorites
+  end
 
   def edit
   end

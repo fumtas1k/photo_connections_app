@@ -1,0 +1,38 @@
+<div class="user-show-header">
+  <div class="user-show-image">
+    <%= image_tag(get_user_image_url(user)) %>
+  </div>
+  <div class="user-show-profile">
+    <div class="user-show-name">
+      <h1><%= user.name %></h1>
+      <% if user.id == current_user.id %>
+        <div class="user-show-edit">
+          <%= link_to "プロフィールを編集",edit_user_path %>
+        </div>
+      <% end %>
+    </div>
+    <div class="user-show-counts">
+      <ul>
+        <li>投稿 <span><%= user.pictures ? user.pictures.count : 0%></span>件</li>
+        <li>お気に入り <span><%= get_favorite_counts(user) %></span>件</li>
+        <li>気に入られ総件数 <span><%= get_favorite_me_counts(user) %></span>件</li>
+      </ul>
+    </div>
+    <div class="user-show-full_name">
+      <h2><%= user.full_name %></h2>
+    </div>
+  </div>
+</div>
+<div class="show-nav">
+  <ul>
+    <li class="show-nav-list <%= posts %>" id="posts">
+      <%= link_to(content_tag(:i, "", class: "fas fa-th") + " 投稿", user_path(user.id)) %>
+    </li>
+    <li class="show-nav-list <%= favorites %>" id="favorites">
+      <%= link_to(content_tag(:i, "", class: "fas fa-bookmark") + " お気に入り", favorites_user_path(user.id)) %>
+    </li>
+  </ul>
+</div>
+<article class="show-pictures" id="post-pictures">
+  <%= render partial: "pictures/pictures", locals: {pictures: pictures} %>
+</article>

@@ -29,7 +29,6 @@
               <li class="header-item">
                 <%= link_to(content_tag(:i, "", class: "far fa-compass"), pictures_path) %>
               </li>
-              <li class="header-item"><a href="#"><i class="far fa-heart"></i></li></a>
               <li class="header-item">
                 <%= image_tag(get_user_image_url(current_user), id:"mini-menu-btn") %>
               </li>
@@ -40,7 +39,9 @@
                     content_tag(:span, "プロフィール"),
                     user_path(current_user.id)) %>
                   </li>
-                  <li><a href="#"><i class="far fa-bookmark"></i><span>保存済み</span></a></li>
+                  <li>
+                    <%= link_to(content_tag(:i, "", class: "far fa-bookmark") + " お気に入り", favorites_user_path(current_user.id)) %>
+                  </li>
                   <hr class="mini-horizon">
                   <li><%=link_to content_tag(:span, "ログアウト"),session_path(current_user.id), method: :delete %></li>
                 </ul>

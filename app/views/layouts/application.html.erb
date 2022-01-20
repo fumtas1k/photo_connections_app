@@ -20,7 +20,8 @@
               <%= link_to "photo_connections", pictures_path %>
             </div>
             <ul class="header-list mini-relative-position">
-              <li class="header-item"><a href="#"><i class="fas fa-home"></i></a>
+              <li class="header-item">
+                <%= link_to(content_tag(:i, "", class:"fas fa-home"), user_path(current_user.id)) %>
               </li>
               <li class="header-item">
                 <%= link_to(content_tag(:i, "", class: "far fa-plus-square"), new_picture_path) %>

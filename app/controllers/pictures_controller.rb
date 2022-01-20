@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: %i[show edit update destroy]
+  before_action :ensure_user, only: %i[edit update destroy]
   def show
     @pictures = Picture.where(user_id: @picture.user.id).order(created_at: :desc).limit(6)
   end
@@ -55,6 +56,10 @@ class PicturesController < ApplicationController
 
   def set_picture
     @picture = Picture.find(params[:id])
+  end
+
+  def ensure_user
+    redirect_back fallback_location: pictures_path if @picture.user.id != current_user.id
   end
 
 end

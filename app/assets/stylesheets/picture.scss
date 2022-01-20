@@ -110,7 +110,7 @@
   width: 334px;
   border-left: 1px solid rgb(239,239,239);
 }
-.show-picture-header,.show-picture-footer {
+.show-picture-header {
   width: 100%;
   height: 60px;
   display: flex;
@@ -160,6 +160,18 @@ button#show-menu-btn {
 .show-pictures-contributer {
   display: inline-block;
   width: 100%;
+}
+.show-picture-footer {
+  width: 100%;
+  border-top: 1px solid rgb(239,239,239);
+  padding: 0 16px;
+}
+.favorite-btn-wrapper {
+  margin-top: 4px;
+  padding: 6px 0 8px;
+}
+.favorites-count {
+  padding: 6px 0 8px;
 }
 
 @media screen and (max-width: 640px) {

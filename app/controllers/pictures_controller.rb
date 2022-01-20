@@ -42,6 +42,9 @@ class PicturesController < ApplicationController
   end
 
   def destroy
+    @picture.destroy
+    flash[:danger] = "投稿を削除しました!"
+    redirect_to root_path
   end
 
   private

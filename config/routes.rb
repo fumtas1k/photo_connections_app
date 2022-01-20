@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "users#index"
+  root "pictures#index"
   resources :users
   resources :sessions, only: %i[new create destroy]
   resources :pictures do

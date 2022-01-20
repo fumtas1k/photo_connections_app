@@ -32,14 +32,14 @@
               <li class="header-item">
                 <%= image_tag(get_user_image_url(current_user), id:"mini-menu-btn") %>
               </li>
-              <div id="mini-menu-wrapper">
+              <div class="mini-menu-wrapper" id="mini-menu-wrapper">
                 <ul class="mini-menu-list">
                   <li><%= link_to(
                     content_tag(:i,"", class: "far fa-user-circle") +
                     content_tag(:span, "プロフィール"),
                     user_path(current_user.id)) %>
                   </li>
-                  <li><a href="#"><i class="far fa-user-circle"></i> <span>保存済み</span></a></li>
+                  <li><a href="#"><i class="far fa-bookmark"></i><span>保存済み</span></a></li>
                   <hr class="mini-horizon">
                   <li><%=link_to content_tag(:span, "ログアウト"),session_path(current_user.id), method: :delete %></li>
                 </ul>

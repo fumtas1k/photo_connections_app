@@ -20,7 +20,7 @@
     <%= form.label :content, class: "sr-only" %>
     <%= form.text_area :content, class: "form-control", placeholder: "キャプションを入力..." %>
     <%= form.label :image, class: "sr-only" %>
-    <%= form.file_field :image, class: "form-control" %>
+    <%= form.file_field :image, class: "form-control", accept: "image/jpg, image/jpeg, image/png, image/gif" %>
     <%= form.hidden_field :image_cache %>
     <div class="picture-image-box">
       <%= image_tag(picture.image.url, class: "form-picture-image") if picture.image && picture.image.url %>

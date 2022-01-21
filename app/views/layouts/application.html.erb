@@ -20,7 +20,7 @@
               <%= link_to "photo_connections", pictures_path %>
             </div>
             <div class="header-center">
-              <%= current_user.name %>
+              <%= link_to current_user.name, user_path(current_user.id) %>
             </div>
             <ul class="header-list mini-relative-position">
               <li class="header-item">

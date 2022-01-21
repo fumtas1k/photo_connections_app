@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
   def show
     @pictures = Picture.where(user_id: @picture.user.id).order(created_at: :desc).limit(6)
     @favorite = current_user.favorites.find_by(picture_id: @picture.id)
-    @favorites = @picture.favorites
+    @favorites = @picture.favorites.order(created_at: :desc)
   end
 
   def index

@@ -33,8 +33,7 @@ Rails.application.configure do
 
   config.active_record.dump_schema_after_migration = false
 
-  #host未設定!!!!
-  config.action_mailer.default_url_options = {host: ""}
+  config.action_mailer.default_url_options = {host: "infinite-brushlands-11636.herokuapp.com/"}
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     user_name: ENV["SENDGRID_USERNAME"],

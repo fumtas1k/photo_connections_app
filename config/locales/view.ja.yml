@@ -8,3 +8,6 @@ ja:
       password: パスワード
       password_confirmation: 確認用パスワード
       image: プロフィール写真
+    pictures:
+      image: 写真
+      content: キャプション

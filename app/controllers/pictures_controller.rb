@@ -61,7 +61,10 @@ class PicturesController < ApplicationController
   end
 
   def ensure_user
-    redirect_back fallback_location: pictures_path if @picture.user.id != current_user.id
+    if @picture.user.id != current_user.id
+      flash[:danger] = "編集権限がありません!"
+      redirect_back fallback_location: pictures_path
+    end
   end
 
 end

@@ -1,6 +1,6 @@
 <% if user.errors.any? %>
   <div class="alert alert-danger alert-login">
-    <h2><%= pluralize(user.errors.count, "error", locale: :en)  %> prohibited this <%= user.name %> from being saved:</h2>
+    <h3><%= pluralize(user.errors.count, "error", locale: :en)  %> prohibited this <%= user.name %> from being saved:</h3>
     <ul>
       <% user.errors.full_messages.each do |msg| %>
         <li><%= msg%></li>
